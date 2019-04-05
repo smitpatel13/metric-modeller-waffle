@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Metric Modeller</title>
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <script type="text/javascript" src="languages.js"></script>
+  <script type="text/javascript" src="language_list.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</head>
+<body onload="getLanguages();">
+  <div class="container">
+    <br><br>
+    <h1>Metric Modeller</h1>
+    <br>
+    <form action="index.html" method="post">
+      <div class="form-group row">
+        <label class="col-2 col-form-label"><h5>Function Points: </h5></label>
+        <div class="col-10">
+          <input class="form-control" type="number" name="function_point" id="function_point" min="0" required>
+        </div>
+      </div>
+      <br>
+      <div class="form-group row">
+        <label class="col-2 col-form-label"><h5>Language: </h5></label>
+        <div class="col-10">
+          <select multiple class="form-control" id="language" required>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="form-group row">
+        <label class="col-2 col-form-label"><h5>Cost per hour: </h5></label>
+        <div class="col-10">
+          <input class="form-control" type="number" name="cost_per_hour" id="cost_per_hour" min="0" required>
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <button class="btn btn-outline-primary" type="button" name="button" onclick="onSubmit();">Submit</button>
+    </form>
+    <div class="container">
+      <br><br>
+      <h3 class="text-white" id="locresult" style="background-color: black;"></h3>
+      <h3 class="text-white" id="timeresult" style="background-color: black;"></h3>
+      <h3 class="text-white" id="costresult" style="background-color: black;"></h3>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
