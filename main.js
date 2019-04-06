@@ -18,9 +18,18 @@ function getLanguages() {
 function onSubmit() {
     var formValues = getFormValues();
 
-    doCalculations(formValues);
+    document.getElementById("input-container").style.display = "none";
+    document.getElementById("thinking-container").style.display = "inline-block";
 
+    doCalculations(formValues);
     console.log(formValues);
+    document.getElementById("output-container").style.display = "none";
+
+    setTimeout(function(){
+      document.getElementById("thinking-container").style.display = "none";
+      document.getElementById("output-container").style.display = "inline-block";
+    }, 3000);
+
 }
 
 /**
@@ -42,8 +51,10 @@ function doCalculations(formValues) {
     var point = DATA[language].point;
 
     document.getElementById("locresult").innerHTML = "Lines of Code: " + function_point * point;
-    document.getElementById("timeresult").innerHTML = "\n Time: " + function_point * point / 2 + " Hours or " + ((function_point * point / 2) / 160).toFixed(2) + " months";
-    document.getElementById("costresult").innerHTML = "Cost: $" + function_point * point * cost_per_hour / 2;
-
-
+    document.getElementById("timeresult").innerHTML 
+                                                  = "\n Time: " + function_point * point / 2 + 
+                                                  " Hours or " + ((function_point * point / 2) / 160).toFixed(2) + 
+                                                  " months";
+    document.getElementById("costresult").innerHTML 
+                                                  = "Cost: $" + function_point * point * cost_per_hour / 2;
 }

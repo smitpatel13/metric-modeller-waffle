@@ -10,13 +10,52 @@
   <script type="text/javascript" src="languages.js"></script>
   <script type="text/javascript" src="language_list.js"></script>
   <script type="text/javascript" src="main.js"></script>
+  <style>
+    @keyframes bouncing-loader {
+        to {
+            opacity: 0.1;
+            transform: translate3d(0, -16px, 0);
+        }
+    }
+
+    .bouncingLoader > div, .bouncingLoader:before, .bouncingLoader:after {
+        text-align: center;
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background: #5778F3;
+        border-radius: 50%;
+        animation: bouncing-loader 0.6s infinite alternate;
+    }
+
+    .bouncingLoader > div, .bouncingLoader:before, .bouncingLoader:after {
+        content: " ";
+    }
+
+    .bouncingLoader > div {
+        margin: 0 5px;
+    }
+
+    .bouncingLoader > div {
+        animation-delay: 0.2s;
+    }
+
+    .bouncingLoader:after {
+        animation-delay: 0.4s;
+    }
+
+    #thinking-container {
+      display: none;
+    }
+
+  </style>
 </head>
 <body onload="getLanguages();">
   <div class="container">
     <br><br>
     <h1>Metric Modeller</h1>
     <br>
-    <form action="index.html" method="post">
+    <form action="index.html" method="post" id="input-container">
       <div class="form-group row">
         <label class="col-2 col-form-label"><h5>Function Points: </h5></label>
         <div class="col-10">
@@ -43,7 +82,13 @@
       <br>
       <button class="btn btn-outline-primary" type="button" name="button" onclick="onSubmit();">Submit</button>
     </form>
-    <div class="container">
+    
+    <div class="text-center" id="thinking-container">
+      <div class="bouncingLoader"></div>
+      <h1>Metric Modeller is thinking</h1>
+    </div>
+
+    <div class="container" id="output-container">
       <br><br>
       <h3 class="text-white" id="locresult" style="background-color: black;"></h3>
       <h3 class="text-white" id="timeresult" style="background-color: black;"></h3>
