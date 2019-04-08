@@ -87,7 +87,7 @@ function doCalculations(formValues) {
   var loc = function_point * point;
   var timeHour = (function_point * point / 2)*eaf;
   var timeMonth = (function_point * point / 2 / 160)*eaf;
-  var cost =  (function_point * point * cost_per_hour / 2)*eaf;
+  var cost =  (function_point * point * cost_per_hour / 2)*eaf * employees;
 
   var effort = a*(Math.pow(loc),b)*eaf;
 
