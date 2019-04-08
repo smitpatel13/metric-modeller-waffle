@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <title>Metric Modeller</title>
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
@@ -55,34 +55,126 @@
     <br><br>
     <h1>Metric Modeller</h1>
     <br>
-    <form action="index.html" method="post" id="input-container">
-      <div class="form-group row">
-        <label class="col-2 col-form-label"><h5>Function Points: </h5></label>
-        <div class="col-10">
-          <input class="form-control" type="number" name="function_point" id="function_point" min="0" required>
+      <form action="index.html" method="post" id="input-container">
+        <div class="form-group row">
+          <label class="col-2 col-form-label"><h5>Function Points: </h5></label>
+          <div class="col-10">
+            <input class="form-control" type="number" name="function_point" id="function_point" min="0" required>
+          </div>
         </div>
-      </div>
-      <br>
-      <div class="form-group row">
-        <label class="col-2 col-form-label"><h5>Language: </h5></label>
-        <div class="col-10">
-          <select multiple class="form-control" id="language" required>
+        <br>
+        <div class="form-group row">
+          <label class="col-2 col-form-label"><h5>Language: </h5></label>
+          <div class="col-10">
+            <select multiple class="form-control" id="language" required>
+            </select>
+          </div>
+        </div>
+        <br>
+        <div class="form-group row">
+          <label class="col-2 col-form-label"><h5>Cost per hour: </h5></label>
+          <div class="col-10">
+            <input class="form-control" type="number" name="cost_per_hour" id="cost_per_hour" min="0" required>
+          </div>
+          <label class="col-2 col-form-label"><h5>Software Project</h5></label>
+          <select class="form-control col" type="text" name="software_projects" id="software_projects" required>
+            <option value="3.2,1.05">Organic</option>
+            <option value="3.0,1.12">Semi detached</option>
+            <option value="2.8,1.2">Embedded</option>
+          </select>
+        </div>
+        <br>
+
+        <label class="col-md-3"><h3>Product</h3></label>
+        <label class="col-md-3"><h3>Hardware</h3></label>
+        <label class="col-md-3"><h3>Personnel</h3></label>
+        <label class="col-md-2"><h3>Project</h3></label>
+        <div class="form-row">
+          <div class="col">
+            <h6>Software Reliability</h6>
+            <select class="form-control" type="text" name="software_reliability" id="software_reliability" required>
+              <option value="0.75">Very Low</option>
+              <option value="0.88">Low</option>
+              <option value="1" selected>Normal</option>
+              <option value="1.15">High</option>
+              <option value="1.4">Very High</option>
+            </select>
+            <h6>Database size</h6>
+            <select class="form-control" type="text" name="database_size" id="database_size" required>
+              <option value="0.94">Low</option>
+              <option value="1" selected>Normal</option>
+              <option value="1.08">High</option>
+              <option value="1.16">Very High</option>
+            </select>
+            <h6>Complexity</h6>
+            <select class="form-control" type="text" name="complexity" id="complexity" required>
+              <option value="0.7">Very Low</option>
+              <option value="0.85">Low</option>
+              <option value="1" selected>Normal</option>
+              <option value="1.15">High</option>
+              <option value="1.3">Very High</option>
+            </select>
+          </div>
+          <div class="col">
+            <h6>Run time restaints</h6>
+            <select class="form-control" type="text" name="run_time_restraints" id="run_time_restraints" required>
+              <option value="1" selected>Normal</option>
+              <option value="1.11">High</option>
+              <option value="1.3">Very High</option>
+            </select>
+            <h6>Memory Constraints</h6>
+            <select class="form-control" type="text" name="memory_constraints" id="memory_constraints" required>
+              <option value="1" selected>Normal</option>
+              <option value="1.06">High</option>
+              <option value="1.21">Very High</option>
+            </select>
+          </div>
+          <div class="col">
+            <h6>Analyst Capability</h6>
+            <select class="form-control" type="text" name="analyst_capability" id="analyst_capability" required>
+              <option value="1.46">Very Low</option>
+              <option value="1.19">Low</option>
+              <option value="1" selected>Normal</option>
+              <option value="0.86">High</option>
+              <option value="0.71">Very High</option>
+            </select>
+            <h6>Programmer Capability</h6>
+            <select class="form-control" type="text" name="programmer_capability" id="programmer_capability" required>
+              <option value="1.42">Very Low</option>
+              <option value="1.17">Low</option>
+              <option value="1" selected>Normal</option>
+              <option value="0.86">High</option>
+              <option value="0.7">Very High</option>
+            </select>
+            <h6>Employees</h6>
+            <input class="form-control" type="number" name="employees" id="employees" min="1" value="1" required>
+          </select>
+        </div>
+        <div class="col">
+          <h6>Software Methods</h6>
+          <select class="form-control" type="text" name="software_methods" id="software_methods" required>
+            <option value="1.24">Very Low</option>
+            <option value="1.1">Low</option>
+            <option value="1" selected>Normal</option>
+            <option value="0.91">High</option>
+            <option value="0.82">Very High</option>
+          </select>
+          <h6>Software tools</h6>
+          <select class="form-control" type="text" name="software_tools" id="software_tools" required>
+            <option value="1.24">Very Low</option>
+            <option value="1.1">Low</option>
+            <option value="1" selected>Normal</option>
+            <option value="0.91">High</option>
+            <option value="0.83">Very High</option>
           </select>
         </div>
       </div>
       <br>
-      <div class="form-group row">
-        <label class="col-2 col-form-label"><h5>Cost per hour: </h5></label>
-        <div class="col-10">
-          <input class="form-control" type="number" name="cost_per_hour" id="cost_per_hour" min="0" required>
-        </div>
-      </div>
 
-      <br>
-      <br>
       <button class="btn btn-outline-primary" type="button" name="button" onclick="onSubmit();">Submit</button>
-    </form>
+      </form>
     
+
     <div class="text-center" id="thinking-container">
       <div class="bouncingLoader"></div>
       <h1>Metric Modeller is thinking</h1>
@@ -93,12 +185,13 @@
       <h3 class="text-white" id="locresult" style="background-color: black;"></h3>
       <h3 class="text-white" id="timeresult" style="background-color: black;"></h3>
       <h3 class="text-white" id="costresult" style="background-color: black;"></h3>
+      <h3 class="text-white" id="scheduleresult" style="background-color: black;"></h3>
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
