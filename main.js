@@ -89,9 +89,9 @@ function doCalculations(formValues) {
   var eaf = software_reliability*database_size*complexity*run_time_restraints*memory_constraints*
   analyst_capability*programmer_capability*software_methods*software_tools*Testing*communication;
   var loc = function_point * point;
-  var timeHour = (function_point * point / 2)*eaf;
-  var timeMonth = (function_point * point / 2 / 160)*eaf;
-  var cost =  (function_point * point * cost_per_hour / 2)*eaf*employees;
+  var timeHour = (function_point * point / 2)*eaf /employees;
+  var timeMonth = (function_point * point / 2 / 160)*eaf /employees;
+  var cost =  (timeHour * cost_per_hour / 2)*eaf*employees;
 
   var effort = a*(Math.pow(loc),b)*eaf;
 
