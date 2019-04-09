@@ -52,8 +52,8 @@ function getFormValues() {
   form.employees = document.getElementById("employees").value;
   form.software_methods = document.getElementById("software_methods").value;
   form.software_tools = document.getElementById("software_tools").value;
-  form.Testing = document.getElementByID("Testing").value;
-  form.communication = document.getElementByID("communication").value;
+  form.Testing = document.getElementById("Testing").value;
+  form.communication = document.getElementById("communication").value;
 
   var spValues = document.getElementById("software_projects").value;
   var split = spValues.split(",");
