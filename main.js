@@ -52,6 +52,8 @@ function getFormValues() {
   form.employees = document.getElementById("employees").value;
   form.software_methods = document.getElementById("software_methods").value;
   form.software_tools = document.getElementById("software_tools").value;
+  form.Testing = document.getElementByID("Testing").value;
+  form.communication = document.getElementByID("communication").value;
 
   var spValues = document.getElementById("software_projects").value;
   var split = spValues.split(",");
@@ -77,13 +79,15 @@ function doCalculations(formValues) {
   var software_methods = this.software_methods.value;
   var software_tools = this.software_tools.value;
   var employees = this.employees.value;
+  var Testing = this.Testing.value;
+  var communication = this.communication.value;
   var a = formValues.a;
   var b = formValues.b;
 
 // calculations
 
   var eaf = software_reliability*database_size*complexity*run_time_restraints*memory_constraints*
-  analyst_capability*programmer_capability*software_methods*software_tools;
+  analyst_capability*programmer_capability*software_methods*software_tools*Testing*communication;
   var loc = function_point * point;
   var timeHour = (function_point * point / 2)*eaf;
   var timeMonth = (function_point * point / 2 / 160)*eaf;
