@@ -167,6 +167,14 @@
             <option value="0.91">High</option>
             <option value="0.83">Very High</option>
           </select>
+          <h6>Software Packages</h6>
+          <select class="form-control" type="text" name="software_packages" id="software_packages" required>
+            <option value="1.24">Very Low</option>
+            <option value="1.1">Low</option>
+            <option value="1" selected>Normal</option>
+            <option value="0.91">High</option>
+            <option value="0.82">Very High</option>
+          </select>
         </div>
       </div>
       <br>
@@ -186,16 +194,21 @@
             <option value="1.2">High</option>
             <option value="1.3">Very High</option>
           </select>
+          <h6>Documentation of Product</h6>
+          <select class="form-control" type="text" name="documentation" id="documentation" required>
+            <option value="1" selected>Normal</option>
+            <option value="1.2">High</option>
+            <option value="1.3">Very High</option>
+          </select>
         </div>
        <br>
-
       <button class="btn btn-outline-primary" type="button" name="button" onclick="onSubmit();">Submit</button>
       </form>
     
 
     <div class="text-center" id="thinking-container">
       <div class="bouncingLoader"></div>
-      <h1>Metric Modeller is thinking</h1>
+      <h1>Metric Modeller is Calculating</h1>
     </div>
 
     <div class="container" id="output-container">
